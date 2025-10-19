@@ -1,24 +1,50 @@
+from typing import Union
+
+import os
 import bcrypt
 import datetime
+
 import pymysql
 from pymysql import cursors
 from pymysql.constants import CLIENT
+
+import psycopg2
+import psycopg2.extras
+
 from flask import current_app
 
 
 def connect_mysql() -> tuple:
-    # 수업 정보를 가져올 때마다 MySQL에 연결을 실행해야 함.
-    user_db = pymysql.connect(
-        host=current_app.config['MYSQL_HOST'],
-        user=current_app.config['MYSQL_USER'],
-        password=current_app.config['MYSQL_PASSWORD'],
-        db=current_app.config['MYSQL_DB'],
-        charset='utf8',
-        client_flag=CLIENT.MULTI_STATEMENTS
-    )
-    # MySQL 의 Data 를 Dict 형태로 반환 시키는 DictCursor 사용
-    cursor = user_db.cursor(cursors.DictCursor)
-    return user_db, cursor
+    """현재 설정에 맞는 DB(MySQL 또는 PostgreSQL) 연결"""
+    db_type = os.getenv('DB_TYPE', 'mysql')
+
+    if db_type == 'postgres':
+        if psycopg2 is None:
+            raise ImportError("psycopg2 라이브러리가 설치되어 있지 않습니다. pip install psycopg2-binary")
+        conn = psycopg2.connect(
+            host=os.getenv('PG_HOST', 'localhost'),
+            dbname=os.getenv('PG_DB', 'database'),
+            user=os.getenv('PG_USER', 'user'),
+            password=os.getenv('PG_PASSWORD', 'password'),
+            port=os.getenv('PG_PORT', 5432),
+        )
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        return conn, cursor
+
+    else:
+        if pymysql is None:
+            raise ImportError("pymysql 라이브러리가 설치되어 있지 않습니다. pip install pymysql")
+        conn = pymysql.connect(
+            host=os.getenv('MYSQL_HOST'),
+            user=os.getenv('MYSQL_USER'),
+            password=os.getenv('MYSQL_PASSWORD'),
+            db=os.getenv('MYSQL_DB'),
+            charset='utf8',
+            client_flag=constants.CLIENT.MULTI_STATEMENTS,
+            cursorclass=cursors.DictCursor
+        )
+        cursor = conn.cursor()
+        return conn, cursor
 
 
 # 여기서부터는 계정과 관련된 함수들을 작성하는 파트 (계정이 존재하는지에 대한 여부, 로그인 적합성 판별 여부)
@@ -192,7 +218,7 @@ def get_leaderboard() -> dict:
 
 # 여기서부터는 레벨과 관련된 함수를 기입하는 곳 (레벨 업 여부, 현재 보유 경험치 및 레벨 체크)
 # 현재 유저가 보유한 경험치의 수량을 얻어오는 함수.
-def get_user_levelexp(player_id: str) -> dict | bool:
+def get_user_levelexp(player_id: str) -> Union[dict, bool]:
     # MySQL 의 Data 를 Dict 형태로 반환 시키는 DictCursor 사용
     user_db, cursor = connect_mysql()
 
