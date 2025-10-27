@@ -8,16 +8,15 @@ main = Blueprint('main', __name__, url_prefix='/')
 @main.route('/')
 def main_page():
     leaderboard = get_leaderboard()
-    if 'username' in session:
-        username = session['username']
+    username = session.get('username')  # 세션에 없으면 None
     return render_template("index.html", **locals())
 
 
 @main.route('/minigame')
 def running_game():
     username = session['username']
-    total_rank = get_user_rank(username)['ranking']
-    best_score, best_stage = get_user_score(username)['bestScore'], get_user_score(username)['bestStage']
+    total_rank = get_user_rank(username)['ranking'] or 0
+    best_score, best_stage = get_user_score(username)['bestScore'] or 0, get_user_score(username)['bestStage'] or 0
     return render_template("game.html", **locals())
 
 
@@ -27,11 +26,11 @@ def get_game_result():
     username = session['username']
     # 게임 종료 후 결과 점수와 유저 개인 최고 기록을 먼저 추출함.
     result = request.get_json()
-    result_score, best_score = result['currentScore'], get_user_score(username)['bestScore']
+    result_score, best_score = result['currentScore'] or 0, get_user_score(username)['bestScore'] or 0
 
     # 먼저, (얻은 점수 / 100) 만큼의 경험치를 추가하고, 레벨이 올랐는지 체크해야 함.
     level_info = get_user_levelexp(username)
-    totalLevel, totalExp = level_info['totalLevel'], level_info['totalGetExp']
+    totalLevel, totalExp = level_info['totalLevel'] or 0, level_info['totalExp'] or 0
     current_exp, needed_exp = totalExp + (result_score // 100), totalLevel ** 2 * 100
 
     # 만약 경험치를 획득한 총량이 레벨업 기준보다 높다면, 이를 반영하여 DB 수정.
@@ -68,7 +67,7 @@ def my_page():
     best_score, best_stage = user_info['bestScore'], user_info['bestStage']
     playerJoinDate, playerEmail = \
         user_info['playerJoinDate'].strftime("%Y년 %m월 %d일"), user_info['playerEmail']
-    totalLevel, totalExp = user_info['totalLevel'], user_info['totalGetExp']
+    totalLevel, totalExp = user_info['totalLevel'], user_info['totalExp']
 
     return render_template("mypage.html", **locals())
 
@@ -86,7 +85,7 @@ def my_level():
     level_info = get_user_levelexp(username)
     data = {
         'level': level_info['totalLevel'],
-        'exp': level_info['totalGetExp']
+        'exp': level_info['totalExp']
     }
 
     return jsonify(data), 200
