@@ -45,6 +45,35 @@ javascript, html, scss 를 활용한 웹앱 기반 같은 카드 찾기 게임 �
 * 0.1
     * Initial Release
 
+## Getting Started
+로컬 기동
+```bash
+python run.py
+```
+
+Dockeer Compose 기동
+```bash
+docker-compose up --build
+```
+
+### Configuration
+.env 파일 설정
+
+| Key | Description | example           |
+|-----|-------------|-------------------|
+| FLASK_APP | Flask 앱 메인 파일명 (예: run.py) | run.py            |
+| FLASK_ENV | Flask 환경 설정 (development/production) | development       |
+| SECRET_KEY | Flask 세션 및 보안용 비밀 키 | your_secret_key   |
+| DATABASE_URL | 데이터베이스 연결 URL | sqlite:///site.db |
+| MAIL_SERVER | 이메일 서버 주소 | smtp.example.com  |
+| MAIL_PORT | 이메일 서버 포트 | 587               |
+| MAIL_USERNAME | 이메일 서버 사용자 이름 | username          |
+| MAIL_PASSWORD | 이메일 서버 비밀번호 | password          |
+| MAIL_USE_TLS | 이메일 서버 TLS 사용 여부 (True/False) | True              |
+| MAIL_USE_SSL | 이메일 서버 SSL 사용 여부 (True/False) | False             |
+
+
+
 ## License
 
 해당 프로젝트의 라이센스는 [MIT] License 규정을 지키고 있습니다.
