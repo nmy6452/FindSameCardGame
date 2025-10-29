@@ -66,7 +66,7 @@ def my_page():
 
     best_score, best_stage = user_info['bestScore'], user_info['bestStage']
     playerJoinDate, playerEmail = \
-        user_info['playerJoinDate'].strftime("%Y년 %m월 %d일"), user_info['playerEmail']
+        user_info['createdDtm'].strftime("%Y년 %m월 %d일"), user_info['email']
     totalLevel, totalExp = user_info['totalLevel'], user_info['totalExp']
 
     return render_template("mypage.html", **locals())

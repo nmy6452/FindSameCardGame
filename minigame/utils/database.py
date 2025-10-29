@@ -111,7 +111,7 @@ def account_confirm(email: str) -> None:
         # 새롭게 입력받은 정보를 정리하여 UPDATE 로 값을 변경함.
         user = session.query(Players).filter(Players.email == email).first()
         if user:
-            user.playerJoinDate = confirm_date
+            user.createdDtm = confirm_date
             user.isConfirmed = True
 
             # playerstatic 및 playerbest 테이블에 해당 유저의 playerID 추가
@@ -172,7 +172,7 @@ def update_user_score(player_id: str, best_score: int, best_stage: int) -> None:
     :return:
     """
     today = datetime.datetime.now()
-    best_score_date = today.strftime('%Y-%m-%d')
+    best_score_date = today.strftime('%Y-%m-%d %H:%M:%S')
 
     engine, session = connect()
     try:
@@ -315,8 +315,8 @@ def user_profile_info(player_id: str) -> dict:
 
         if user:
             return {
-                'playerEmail': user.email,
-                'playerJoinDate': user.createdDtm,
+                'email': user.email,
+                'createdDtm': user.createdDtm,
                 'bestScore': user.bestScore,
                 'bestStage': user.bestStage,
                 'totalExp': user.totalExp,
