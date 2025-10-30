@@ -46,12 +46,28 @@ javascript, html, scss 를 활용한 웹앱 기반 같은 카드 찾기 게임 �
     * Initial Release
 
 ## Getting Started
-로컬 기동
+### 로컬 기동
+로컬 환경에서 Flask 앱을 기동하려면 아래 명령어를 사용하세요.
 ```bash
 python run.py
 ```
 
-Dockeer Compose 기동
+### Dockeer Compose 기동
+Docker와 Docker Compose가 설치되어 있어야 합니다.
+docker-compose.yml 파일 예시:
+```yaml
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: minigame-app
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+```
+Docker Compose를 사용하여 앱을 기동하려면 아래 명령어를 사용하세요.
 ```bash
 docker-compose up --build
 ```
