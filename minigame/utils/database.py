@@ -111,7 +111,7 @@ def account_confirm(email: str) -> None:
         # 새롭게 입력받은 정보를 정리하여 UPDATE 로 값을 변경함.
         user = session.query(Players).filter(Players.email == email).first()
         if user:
-            user.playerJoinDate = confirm_date
+            user.createdDtm = confirm_date
             user.isConfirmed = True
 
             # playerstatic 및 playerbest 테이블에 해당 유저의 playerID 추가
@@ -152,7 +152,7 @@ def get_user_score(player_id: str) -> dict:
     """
     engine, session = connect()
     try:
-        user_best = session.query(PlayerBest).filter(PlayerBest.playerlist_playerID == player_id).first()
+        user_best = session.query(PlayerBest).filter(PlayerBest.playerId == player_id).first()
         if user_best:
             return {
                 'bestScore': user_best.bestScore,
@@ -172,7 +172,7 @@ def update_user_score(player_id: str, best_score: int, best_stage: int) -> None:
     :return:
     """
     today = datetime.datetime.now()
-    best_score_date = today.strftime('%Y-%m-%d')
+    best_score_date = today.strftime('%Y-%m-%d %H:%M:%S')
 
     engine, session = connect()
     try:
@@ -200,7 +200,7 @@ def get_user_rank(player_id: str) -> dict:
             func.rank().over(order_by=PlayerBest.bestScore.desc()).label('ranking')
         ).subquery()
 
-        result = session.query(user_rank.c.ranking).filter(user_rank.c.playerId == player_id).first()
+        result = session.query(user_rank.c.ranking).filter(user_rank.c.player_id == player_id).first()
         if result:
             return {'ranking': result.ranking}
     finally:
@@ -246,8 +246,8 @@ def get_leaderboard() -> dict:
             result.append({
                 'rank': entry.rank,
                 'playerID': entry.PlayerBest.playerId,
-                'bestScore': entry.PlayerBest.bestScore,
-                'bestStage': entry.PlayerBest.bestStage,
+                'bestScore': entry.PlayerBest.bestScore or 0,
+                'bestStage': entry.PlayerBest.bestStage or 0,
                 'bestScoreDate': entry.PlayerBest.bestScoreDate
             })
         return result
@@ -267,7 +267,7 @@ def get_user_levelexp(player_id: str) -> Union[dict, bool]:
         user_static = session.query(PlayerStatic).filter(PlayerStatic.playerId == player_id).first()
         if user_static:
             return {
-                'totalGetExp': user_static.totalGetExp,
+                'totalExp': user_static.totalExp,
                 'totalLevel': user_static.totalLevel
             }
     finally:
@@ -285,7 +285,7 @@ def set_user_levelexp(player_id: str, exp: int, level: int) -> None:
     engine, session = connect()
     try:
         session.query(PlayerStatic).filter(PlayerStatic.playerId == player_id).update({
-            PlayerStatic.totalGetExp: exp,
+            PlayerStatic.totalExp: exp,
             PlayerStatic.totalLevel: level
         })
         session.commit()
@@ -307,7 +307,7 @@ def user_profile_info(player_id: str) -> dict:
             Players.createdDtm,
             PlayerBest.bestScore,
             PlayerBest.bestStage,
-            PlayerStatic.totalGetExp,
+            PlayerStatic.totalExp,
             PlayerStatic.totalLevel
         ).join(PlayerBest, Players.id == PlayerBest.playerId
                ).join(PlayerStatic, Players.id == PlayerStatic.playerId
@@ -315,11 +315,11 @@ def user_profile_info(player_id: str) -> dict:
 
         if user:
             return {
-                'playerEmail': user.email,
-                'playerJoinDate': user.createdDtm,
+                'email': user.email,
+                'createdDtm': user.createdDtm,
                 'bestScore': user.bestScore,
                 'bestStage': user.bestStage,
-                'totalGetExp': user.totalGetExp,
+                'totalExp': user.totalExp,
                 'totalLevel': user.totalLevel
             }
     finally:

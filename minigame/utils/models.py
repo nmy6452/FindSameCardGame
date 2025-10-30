@@ -31,8 +31,8 @@ class PlayerBest(Base):
 
     id = Column(Integer, primary_key=True)
     playerId = Column("player_id", String, ForeignKey('cgt_players.id'))
-    bestScore = Column("best_score", Integer)
-    bestStage = Column("best_stage", Integer)
+    bestScore = Column("best_score", Integer, default=0)
+    bestStage = Column("best_stage", Integer, default=0)
     bestScoreDate = Column("best_score_date", DateTime)
 
     player = relationship("Players", back_populates="best")
@@ -47,7 +47,7 @@ class PlayerStatic(Base):
 
     id = Column(Integer, primary_key=True)
     playerId = Column("player_id",String, ForeignKey('cgt_players.id'))
-    totalExp = Column("total_exp", Integer)
-    totalLevel = Column("total_level", Integer)
+    totalExp = Column("total_exp", Integer, default=0)
+    totalLevel = Column("total_level", Integer, default=0)
 
     player = relationship("Players", back_populates="static")
