@@ -349,7 +349,7 @@ body {
 
 .main__footer {
   width: 100vw;
-  height: 10vw;
+  height: 26vw;
   text-align: center;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, rgba(98, 0, 122, 0.9)), to(#2500aa));
   background: linear-gradient(rgba(98, 0, 122, 0.9) 40%, #2500aa);
@@ -357,6 +357,21 @@ body {
 
 .main__footer--element {
   color: white;
+}
+
+.main__footer--element h1 {
+  margin: 0.2vw 0vw;
+  font-size: 3vw;
+}
+
+.main__footer--element h2 {
+  margin: 0.2vw 0vw;
+  font-size: 2vw;
+}
+
+.main__footer--element div {
+  margin: 0.2vw 0vw;
+  font-size: 1vw;
 }
 
 .main__footer--element i {

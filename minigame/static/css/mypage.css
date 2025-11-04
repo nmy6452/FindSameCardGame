@@ -349,7 +349,7 @@ body {
 
 .main__footer {
   width: 100vw;
-  height: 10vw;
+  height: 1026;
   text-align: center;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, rgba(98, 0, 122, 0.9)), to(#2500aa));
   background: linear-gradient(rgba(98, 0, 122, 0.9) 40%, #2500aa);

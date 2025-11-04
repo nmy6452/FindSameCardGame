@@ -17,93 +17,137 @@
     <title>Baik's Minegame Center</title>
 </head>
 <body>
-    <div class="container">
-        <nav class="main__navbar">
-            <a href="#section-info"><i class="fa-solid fa-circle-question"></i>GuideLine</a>
-            <a href="#section-leader"><i class="fa-solid fa-award"></i></i>Leaderboard</a>
-            {% if username %}
-                <a href="{{ url_for('main.my_page') }}"><i class="fa-solid fa-user"></i></i>{{username}}</a>
-                <a href="{{ url_for('account.logout') }}"><i class="fa-solid fa-right-from-bracket"></i>log out</a>
-            {% else %}
-                <a href="{{ url_for('account.login') }}"><i class="fa-solid fa-right-to-bracket"></i>Sign in</a>
-                <a href="{{ url_for('signup.register') }}"><i class="fa-solid fa-gamepad"></i></i>Sign up</a>
-            {% endif %}
-        </nav>
-        <div class="main__background">
-            <h3>Find the same picture</h3>
-            {% if username %}
-                <p>Welcome Back {{username}}! have a good day!</p>
-                <a href="{{ url_for('main.running_game', username=username) + '#section-game'}}"><i class="fa-solid fa-play"></i>Play the game</a>
-            {% else %}
-                <p>Welcome to Baik's Minegame Center!</p>
-                <a href="{{ url_for('account.login') }}"><i class="fa-solid fa-right-to-bracket"></i>Join our Center</a>
-            {% endif %}
+<div class="container">
+    <nav class="main__navbar">
+        <a href="#section-info"><i class="fa-solid fa-circle-question"></i>GuideLine</a>
+        <a href="#section-leader"><i class="fa-solid fa-award"></i></i>Leaderboard</a>
+        {% if username %}
+        <a href="{{ url_for('main.my_page') }}"><i class="fa-solid fa-user"></i></i>{{username}}</a>
+        <a href="{{ url_for('account.logout') }}"><i class="fa-solid fa-right-from-bracket"></i>log out</a>
+        {% else %}
+        <a href="{{ url_for('account.login') }}"><i class="fa-solid fa-right-to-bracket"></i>Sign in</a>
+        <a href="{{ url_for('signup.register') }}"><i class="fa-solid fa-gamepad"></i></i>Sign up</a>
+        {% endif %}
+    </nav>
+    <div class="main__background">
+        <h3>Find the same picture</h3>
+        {% if username %}
+        <p>Welcome Back {{username}}! have a good day!</p>
+        <a href="{{ url_for('main.running_game', username=username) + '#section-game'}}"><i
+                class="fa-solid fa-play"></i>Play the game</a>
+        {% else %}
+        <p>Welcome to Baik's Minegame Center!</p>
+        <a href="{{ url_for('account.login') }}"><i class="fa-solid fa-right-to-bracket"></i>Join our Center</a>
+        {% endif %}
+    </div>
+    <section class="main__information" id="section-info">
+        <div class="main__darken-gradient"></div>
+        <div class="main__information--title">
+            <h4>How to play</h4>
+            <p>게임 가이드라인</p>
         </div>
-        <section class="main__information" id="section-info">
-            <div class="main__darken-gradient"></div>
-            <div class="main__information--title">
-                <h4>How to play</h4>
-                <p>게임 가이드라인</p>
+        <div class="main__information--element">
+            <div class="information--guide">
+                <i class="fa-solid fa-square-pen"></i>
+                <span>Try to Memorize!</span>
+                <p>짧은 시간 동안 각 카드들의 위치를 <strong>전부</strong> 기억해두세요!</p>
             </div>
-            <div class="main__information--element">
-                <div class="information--guide">
-                    <i class="fa-solid fa-square-pen"></i>
-                    <span>Try to Memorize!</span>
-                    <p>짧은 시간 동안 각 카드들의 위치를 <strong>전부</strong> 기억해두세요!</p>
-                </div>
-                <div class="information--guide">
-                    <i class="fa-solid fa-square-check"></i>
-                    <span>Select the card!</span>
-                    <p>정해진 시간 내에 같은 카드를 <strong>최대한 많이</strong> 찾아보세요!</p>
-                </div>
-                <div class="information--guide">
-                    <i class="fa-solid fa-square-poll-vertical"></i>
-                    <span>Beat the Score!</span>
-                    <p>다른 유저들과 경쟁하여 <strong>리더보드</strong>에 이름을 올려보세요!</p>
-                </div>
+            <div class="information--guide">
+                <i class="fa-solid fa-square-check"></i>
+                <span>Select the card!</span>
+                <p>정해진 시간 내에 같은 카드를 <strong>최대한 많이</strong> 찾아보세요!</p>
             </div>
-        </section>
-        <section class="main__leaderboard" id="section-leader">
-            <div class="main__leaderboard--title">
-                <h4>Leaderboard</h4>
-                <p>게임 전체 순위표</p>
+            <div class="information--guide">
+                <i class="fa-solid fa-square-poll-vertical"></i>
+                <span>Beat the Score!</span>
+                <p>다른 유저들과 경쟁하여 <strong>리더보드</strong>에 이름을 올려보세요!</p>
             </div>
-            <div class="main__leaderboard--list">
-                <div class="leaderboard--header">
-                    <span>랭킹</span>
-                    <span>닉네임</span>
-                    <span>하이 스코어</span>
-                    <span>스테이지</span>
-                    <span>기록 일자</span>
-                </div>
-                {% for player in leaderboard %}
-                    <div class="leaderboard--list">
-                        {% for key, value in player.items() %}
-                            {% if key == 'rank' %}
-                                <span># {{value}}</span>
-                            {% elif key == 'bestScore' %}
-                                <span>{{ "{:,}".format(value) }}</span>
-                            {% elif key == 'bestStage' %}
-                                <span>{{ "Stage {:0>2}".format(value) }}</span>
-                            {% else %}
-                                <span>{{value}}</span>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+        </div>
+    </section>
+    <section class="main__leaderboard" id="section-leader">
+        <div class="main__leaderboard--title">
+            <h4>Leaderboard</h4>
+            <p>게임 전체 순위표</p>
+        </div>
+        <div class="main__leaderboard--list">
+            <div class="leaderboard--header">
+                <span>랭킹</span>
+                <span>닉네임</span>
+                <span>하이 스코어</span>
+                <span>스테이지</span>
+                <span>기록 일자</span>
+            </div>
+            {% for player in leaderboard %}
+            <div class="leaderboard--list">
+                {% for key, value in player.items() %}
+                {% if key == 'rank' %}
+                <span># {{value}}</span>
+                {% elif key == 'bestScore' %}
+                <span>{{ "{:,}".format(value) }}</span>
+                {% elif key == 'bestStage' %}
+                <span>{{ "Stage {:0>2}".format(value) }}</span>
+                {% else %}
+                <span>{{value}}</span>
+                {% endif %}
                 {% endfor %}
             </div>
-        </section>
-        <footer class="main__footer">
-            <div class="main__footer--element">
+            {% endfor %}
+        </div>
+    </section>
+    <footer class="main__footer">
+        <div class="main__footer--element">
+            <a href="https://github.com/nmy6452/FindSameCardGame" target="_blank"
+               style="color: white; text-decoration: none;">
                 <i class="fa-brands fa-github fa-xl"></i>
+            </a>
+            <a href="mailto:nmy6452@naver.com" target="_blank" style="color: white; text-decoration: none;">
                 <i class="fa-solid fa-envelope fa-xl"></i>
-                <i class="fa-brands fa-google-plus-square fa-xl"></i>
-            </div>
-            <div class="main__footer--element">
-                <p>Copyright © 2022 dev_rookiand.co.,Ltd. All rights reserved.</p>
-                <p>Contact author for more information. <strong>gwangin1999@naver.com</strong></p>
-            </div>
-        </footer>
-    </div>
+            </a>
+            <!--            <a href="https://github.com/yourusername" target="_blank">-->
+            <!--                <i class="fa-brands fa-google-plus-square fa-xl"></i>-->
+            <!--            </a>-->
+        </div>
+        <div class="main__footer--element">
+            <section class="credits">
+                <h1>About / Credits</h1>
+
+                <p>
+                    본 서비스는 오픈소스 프로젝트를 기반으로 개발되었습니다.<br/>
+                    아래는 사용된 주요 오픈소스와 원저작권 정보입니다.
+                </p>
+
+                <h2>Open Source Credits</h2>
+
+                <div>
+                    <span>
+                        <strong>Project Name:</strong> FindSameCardGame<br/>
+                    </span>
+                        <span>
+                        <strong>Original Author:</strong> dev_rookiand.co.,Ltd.<br/>
+                    </span>
+                        <span>
+                        <strong>License:</strong>
+                        <a href="https://opensource.org/licenses/MIT" target="_blank"
+                           style="color: white; text-decoration: none;">MIT License</a>
+                    </span>
+                        <span>
+                        <strong>Source:</strong>
+                        <a href="https://github.com/RookieAND/FindSameCardGame" target="_blank"
+                           style="color: white; text-decoration: none;">GitHub Repository</a>
+                    </span>
+                </div>
+
+                <h2>Additional Notes</h2>
+                <p>
+                    본 서비스는 상기 오픈소스 프로젝트를 기반으로 커스터마이징 되었으며,<br/>
+                    모든 수정 사항은 MIT 라이선스 조건을 준수합니다.<br/>
+                    원저작권자에게 감사를 드립니다.
+                </p>
+
+                <p>© 2025 nmy6452. All rights reserved.</p>
+            </section>
+        </div>
+    </footer>
+</div>
 </body>
 </html>
