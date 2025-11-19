@@ -62,14 +62,14 @@ async function getFindPasswordValidation() {
 async function checkFindPasswordValid(event) {
     event.preventDefault();
     const checkValid = document.querySelector('.check-valid');
-    const confirmDiv = document.querySelector('.main__register--confirm');
+    const confirmDiv = document.querySelector('.main__find-password--confirm');
     
     try {
         const validResult = await getFindPasswordValidation();
         
         if (validResult.result == 'success') {
             // 폼 숨기기
-            document.querySelector('.main__register--session').style.display = 'none';
+            document.querySelector('.main__find-password--session').style.display = 'none';
             // 확인 메시지 표시
             if (confirmDiv) {
                 confirmDiv.style.display = 'block';

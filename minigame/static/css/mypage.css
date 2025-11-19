@@ -268,7 +268,7 @@ body {
 
 .main__footer {
   width: 100vw;
-  height: 1026;
+  height: 26vw;
   text-align: center;
   background: linear-gradient(rgba(98, 0, 122, 0.9) 40%, rgb(37, 0, 170));
 }
@@ -282,6 +282,18 @@ body {
   margin: 2vw 4vw 1vw 4vw;
   font-size: 2vw;
   line-height: 2.5vw;
+}
+.main__footer--element h1 {
+  margin: 0.2vw 0vw;
+  font-size: 3vw;
+}
+.main__footer--element h2 {
+  margin: 0.2vw 0vw;
+  font-size: 2vw;
+}
+.main__footer--element div {
+  margin: 0.2vw 0vw;
+  font-size: 1vw;
 }
 .main__footer--element p {
   margin: 0.2vw 0vw;

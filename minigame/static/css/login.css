@@ -283,6 +283,18 @@ body {
   font-size: 2vw;
   line-height: 2.5vw;
 }
+.main__footer--element h1 {
+  margin: 0.2vw 0vw;
+  font-size: 3vw;
+}
+.main__footer--element h2 {
+  margin: 0.2vw 0vw;
+  font-size: 2vw;
+}
+.main__footer--element div {
+  margin: 0.2vw 0vw;
+  font-size: 1vw;
+}
 .main__footer--element p {
   margin: 0.2vw 0vw;
   font-family: "Oswald", sans-serif;
