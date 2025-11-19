@@ -10,43 +10,33 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
 }
 
 .main__navbar {
   width: 100vw;
   height: 3.5vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  justify-content: center;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   position: absolute;
   left: 0;
   right: 0;
   margin: auto;
 }
-
 .main__navbar a {
-  -ms-flex-preferred-size: 10vw;
-      flex-basis: 10vw;
+  flex-basis: 10vw;
   margin: 1vw 1vw;
   font-size: 1vw;
-  color: white;
-  text-shadow: 0px 2px #1f008d;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 2px rgb(31, 0, 141);
   text-decoration: none;
   text-align: center;
-  -webkit-transition: font-size 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: font-size 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-
 .main__navbar a:hover {
   font-size: 1.1vw;
 }
-
 .main__navbar a i {
   padding-right: 0.4vw;
 }
@@ -54,59 +44,48 @@ body {
 .main__background {
   width: 100vw;
   height: 40vw;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.15))), url(../img/bg_img.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)), url(../img/bg_img.jpg);
   background-size: cover;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
 }
-
 .main__background h3 {
   position: relative;
   top: 10vw;
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3000df), to(rgba(154, 0, 192, 0.9)));
-  background: linear-gradient(#3000df, rgba(154, 0, 192, 0.9));
+  background: linear-gradient(rgb(48, 0, 223), rgba(154, 0, 192, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 5.5vw;
-  text-shadow: 0px -5px white;
+  text-shadow: 0px -5px rgb(255, 255, 255);
 }
-
 .main__background p {
   position: relative;
   top: 10vw;
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 2vw;
-  text-shadow: 0px -4px white;
+  text-shadow: 0px -4px rgb(255, 255, 255);
 }
-
 .main__background a {
   position: relative;
   top: 17.5vw;
   padding: 0.5vw 2.5vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#340086), to(#1e00a3));
-  background: linear-gradient(#340086, #1e00a3);
+  background: linear-gradient(rgb(52, 0, 134), rgb(30, 0, 163));
   border-radius: 5vw;
-  -webkit-box-shadow: 0px 0.15vw 10px rgba(21, 0, 78, 0.5);
-          box-shadow: 0px 0.15vw 10px rgba(21, 0, 78, 0.5);
+  box-shadow: 0px 0.15vw 10px rgba(21, 0, 78, 0.5);
   font-size: 2.75vw;
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   text-align: center;
   text-shadow: 0px 4px 1px rgba(21, 0, 78, 0.5);
-  -webkit-transition: font-size 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: font-size 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-
 .main__background a:hover {
   font-size: 3vw;
 }
-
 .main__background a i {
   margin: auto 1vw;
 }
@@ -114,102 +93,78 @@ body {
 .main__information {
   width: 100vw;
   height: 45vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3000df), to(rgba(154, 0, 192, 0.9)));
-  background: linear-gradient(#3000df, rgba(154, 0, 192, 0.9));
+  background: linear-gradient(rgb(48, 0, 223), rgba(154, 0, 192, 0.9));
 }
 
 .main__information--title {
-  color: white;
+  color: rgb(255, 255, 255);
   text-shadow: 0px 2px rgba(42, 0, 119, 0.5);
   text-align: center;
   position: relative;
   top: 4vw;
 }
-
 .main__information--title h4 {
   height: 5.5vw;
   margin: 0;
   font-size: 5.5vw;
-  text-shadow: 0px 0.3vw #1e00a3;
+  text-shadow: 0px 0.3vw rgb(30, 0, 163);
 }
-
 .main__information--title p {
   margin: 0;
   font-size: 2vw;
-  font-family: 'Black Han Sans', sans-serif;
-  text-shadow: 0px 0.2vw #1e00a3;
+  font-family: "Black Han Sans", sans-serif;
+  text-shadow: 0px 0.2vw rgb(30, 0, 163);
 }
 
 .main__information--element {
   width: 80vw;
   height: 22.5vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
   position: relative;
   top: 7.5vw;
   left: 0vw;
   right: 0vw;
   margin: auto;
-  background: white;
+  background: rgb(255, 255, 255);
   background-size: cover;
   border-radius: 25px;
-  -webkit-box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
-          box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
+  box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
 }
-
 .main__information--element .information--guide {
-  -ms-flex-preferred-size: 20vw;
-      flex-basis: 20vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3000df), to(rgba(154, 0, 192, 0.9)));
-  background: linear-gradient(#3000df, rgba(154, 0, 192, 0.9));
+  flex-basis: 20vw;
+  background: linear-gradient(rgb(48, 0, 223), rgba(154, 0, 192, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-
 .main__information--element .information--guide i {
   margin: 0vw auto 0.75vw auto;
   font-size: 7.5vw;
 }
-
 .main__information--element .information--guide span {
   display: block;
   margin: 0vw auto;
   font-size: 3vw;
 }
-
 .main__information--element .information--guide p {
-  width: 12vw;
-  margin: 0vw auto;
-  font-family: 'NanumSquare', sans-serif;
-  font-size: 1vw;
+  width: 13vw;
+  margin: 0.5vw auto 0vw auto;
+  font-family: "NanumSquare", sans-serif;
+  font-size: 1.1vw;
 }
-
 .main__information--element .information--guide:hover {
-  -ms-flex-preferred-size: 19vw;
-      flex-basis: 19vw;
+  flex-basis: 19vw;
   margin: 0vw 2vw;
 }
 
 .main__darken-gradient {
   width: 100vw;
   height: 5vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0)));
+  justify-content: center;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
   position: absolute;
   left: 0;
@@ -222,125 +177,89 @@ body {
   height: 60vw;
   background-image: url(../img/bg_img2.jpg);
   background-size: cover;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
 }
 
 .main__leaderboard--title {
-  color: white;
+  color: rgb(255, 255, 255);
   text-shadow: 0px 2px rgba(42, 0, 119, 0.5);
   text-align: center;
   position: relative;
   top: 4vw;
 }
-
 .main__leaderboard--title h4 {
   height: 5.5vw;
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px -4px white;
+  text-shadow: 0px -4px rgb(255, 255, 255);
   font-size: 5.5vw;
 }
-
 .main__leaderboard--title h4:hover {
-  text-shadow: 0px -2px white;
+  text-shadow: 0px -2px rgb(255, 255, 255);
 }
-
 .main__leaderboard--title p {
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px -2px white;
+  text-shadow: 0px -2px rgb(255, 255, 255);
   font-size: 2vw;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 }
 
 .main__leaderboard--list {
   width: 80vw;
   height: 39vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
   position: relative;
   top: 7.5vw;
   left: 0vw;
   right: 0vw;
   margin: auto;
-  background: white;
+  background: rgb(255, 255, 255);
   background-size: cover;
   border-radius: 25px;
-  -webkit-box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
-          box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
+  box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
 }
-
 .main__leaderboard--list .leaderboard--header {
-  -ms-flex-preferred-size: 80vw;
-      flex-basis: 80vw;
+  flex-basis: 80vw;
   height: 4vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   border-radius: 20px 20px 0px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
-
 .main__leaderboard--list .leaderboard--header span {
-  -ms-flex-preferred-size: 20vw;
-      flex-basis: 20vw;
+  flex-basis: 20vw;
   margin: 1.1vw auto 0vw auto;
-  color: white;
-  font-family: 'Black Han Sans', sans-serif;
+  color: rgb(255, 255, 255);
+  font-family: "Black Han Sans", sans-serif;
   font-size: 2vw;
 }
-
 .main__leaderboard--list .leaderboard--list {
-  -ms-flex-preferred-size: 80vw;
-      flex-basis: 80vw;
+  flex-basis: 80vw;
   height: 3.3vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  justify-content: space-evenly;
+  align-items: flex-start;
   text-align: center;
 }
-
 .main__leaderboard--list .leaderboard--list span {
-  -ms-flex-preferred-size: 20vw;
-      flex-basis: 20vw;
+  flex-basis: 20vw;
   margin: auto;
-  color: #1e00a3;
+  color: rgb(30, 0, 163);
   font-size: 1.75vw;
 }
-
 .main__leaderboard--list .leaderboard--list i {
   margin-right: 10px;
 }
-
 .main__leaderboard--list .leaderboard--list:nth-child(even) {
   background: rgba(48, 0, 223, 0.05);
   border-top: 1px solid rgba(21, 0, 78, 0.1);
@@ -351,14 +270,12 @@ body {
   width: 100vw;
   height: 10vw;
   text-align: center;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, rgba(98, 0, 122, 0.9)), to(#2500aa));
-  background: linear-gradient(rgba(98, 0, 122, 0.9) 40%, #2500aa);
+  background: linear-gradient(rgba(98, 0, 122, 0.9) 40%, rgb(37, 0, 170));
 }
 
 .main__footer--element {
-  color: white;
+  color: rgb(255, 255, 255);
 }
-
 .main__footer--element i {
   width: 2.5vw;
   height: 2.5vw;
@@ -366,107 +283,85 @@ body {
   font-size: 2vw;
   line-height: 2.5vw;
 }
-
 .main__footer--element p {
   margin: 0.2vw 0vw;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 1vw;
 }
 
 .main__mybest {
   width: 100vw;
   height: 30vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3000df), to(rgba(154, 0, 192, 0.9)));
-  background: linear-gradient(#3000df, rgba(154, 0, 192, 0.9));
+  background: linear-gradient(rgb(48, 0, 223), rgba(154, 0, 192, 0.9));
 }
 
 .main__mybest--title {
-  color: white;
+  color: rgb(255, 255, 255);
   text-shadow: 0px 2px rgba(42, 0, 119, 0.5);
   text-align: center;
   position: relative;
   top: 4vw;
 }
-
 .main__mybest--title h4 {
   height: 5.5vw;
   margin: 0;
   font-size: 5.5vw;
-  text-shadow: 0px 0.3vw #1e00a3;
+  text-shadow: 0px 0.3vw rgb(30, 0, 163);
 }
-
 .main__mybest--title p {
   margin: 0;
   font-size: 2vw;
-  font-family: 'Black Han Sans', sans-serif;
-  text-shadow: 0px 0.2vw #1e00a3;
+  font-family: "Black Han Sans", sans-serif;
+  text-shadow: 0px 0.2vw rgb(30, 0, 163);
 }
 
 .main__mybest--element {
   width: 60vw;
   height: 10vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
   position: relative;
   top: 7.5vw;
   left: 0vw;
   right: 0vw;
   margin: auto;
 }
-
 .main__mybest--element .mybest--guide {
-  -ms-flex-preferred-size: 15vw;
-      flex-basis: 15vw;
+  flex-basis: 15vw;
   padding-top: 0.6vw;
-  background: white;
+  background: rgb(255, 255, 255);
   background-size: cover;
   border-radius: 25px;
-  -webkit-box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
-          box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
+  box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
   text-align: center;
-  -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
 .main__mybest--element .mybest--guide i {
-  background: -webkit-gradient(linear, left top, left bottom, from(#3000df), to(rgba(154, 0, 192, 0.9)));
-  background: linear-gradient(#3000df, rgba(154, 0, 192, 0.9));
+  background: linear-gradient(rgb(48, 0, 223), rgba(154, 0, 192, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0vw auto 0.75vw auto;
   font-size: 2vw;
 }
-
 .main__mybest--element .mybest--guide span {
-  background: -webkit-gradient(linear, left top, left bottom, from(#3000df), to(rgba(154, 0, 192, 0.9)));
-  background: linear-gradient(#3000df, rgba(154, 0, 192, 0.9));
+  background: linear-gradient(rgb(48, 0, 223), rgba(154, 0, 192, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
   margin: 0vw auto;
   font-size: 1.5vw;
 }
-
 .main__mybest--element .mybest--guide strong {
-  background: -webkit-gradient(linear, left top, left bottom, from(#3000df), to(rgba(154, 0, 192, 0.9)));
-  background: linear-gradient(#3000df, rgba(154, 0, 192, 0.9));
+  background: linear-gradient(rgb(48, 0, 223), rgba(154, 0, 192, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: 12vw;
   margin: 0vw auto;
   font-size: 3vw;
 }
-
 .main__mybest--element .mybest--guide:hover {
-  -ms-flex-preferred-size: 17.5vw;
-      flex-basis: 17.5vw;
+  flex-basis: 17.5vw;
   margin: 0vw 2vw;
 }
 
@@ -475,104 +370,81 @@ body {
   height: 80vw;
   background-image: url(../img/bg_img2.jpg);
   background-size: 100vw 80vw;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
 }
 
 .main__minigame--title {
-  color: white;
+  color: rgb(255, 255, 255);
   text-shadow: 0px 2px rgba(42, 0, 119, 0.5);
   text-align: center;
   position: relative;
   top: 4vw;
 }
-
 .main__minigame--title h4 {
   height: 5.5vw;
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px -4px white;
+  text-shadow: 0px -4px rgb(255, 255, 255);
   font-size: 5.5vw;
 }
-
 .main__minigame--title h4:hover {
-  text-shadow: 0px -2px white;
+  text-shadow: 0px -2px rgb(255, 255, 255);
 }
-
 .main__minigame--title p {
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px -2px white;
+  text-shadow: 0px -2px rgb(255, 255, 255);
   font-size: 2vw;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 }
 
 .main__minigame--status {
   width: 70vw;
   height: 4vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
   position: relative;
   top: 7.5vw;
   left: 0vw;
   right: 0vw;
   margin: auto;
-  background: white;
+  background: rgb(255, 255, 255);
   border-radius: 50px;
-  -webkit-box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
-          box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
+  box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
 }
-
 .main__minigame--status .minigame-status {
-  -ms-flex-preferred-size: 20vw;
-      flex-basis: 20vw;
+  flex-basis: 20vw;
   height: 3vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   vertical-align: middle;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-
 .main__minigame--status .minigame-status i {
-  background: -webkit-gradient(linear, left top, left bottom, from(#3000df), to(rgba(154, 0, 192, 0.9)));
-  background: linear-gradient(#3000df, rgba(154, 0, 192, 0.9));
+  background: linear-gradient(rgb(48, 0, 223), rgba(154, 0, 192, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0vw auto 0.75vw auto;
   font-size: 2.25vw;
 }
-
 .main__minigame--status .minigame-status span {
   margin: 0vw 1vw 0.75vw 1vw;
   font-size: 1.75vw;
 }
-
 .main__minigame--status .minigame-status strong {
   font-size: 2.75vw;
 }
-
 .main__minigame--status .minigame-status:hover {
-  -ms-flex-preferred-size: 19vw;
-      flex-basis: 19vw;
+  flex-basis: 19vw;
   margin: 0vw 2vw;
 }
-
 .main__minigame--status.ended {
   display: none;
 }
@@ -587,7 +459,6 @@ body {
   right: 0vw;
   margin: auto;
 }
-
 .main__minigame--lobby h4 {
   height: 5.5vw;
   position: absolute;
@@ -597,7 +468,6 @@ body {
   margin: auto;
   font-size: 7vw;
 }
-
 .main__minigame--lobby p {
   height: 5.5vw;
   position: relative;
@@ -606,43 +476,33 @@ body {
   right: 0vw;
   margin: auto;
   font-size: 2vw;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 }
-
 .main__minigame--lobby button {
   width: 25vw;
   height: 4vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#272aff), to(#ef3cff));
-  background: linear-gradient(#272aff, #ef3cff);
+  background: linear-gradient(rgb(39, 42, 255), rgb(239, 60, 255));
   border-radius: 10vw;
-  -webkit-box-shadow: 0px 0.25vw #0d0046;
-          box-shadow: 0px 0.25vw #0d0046;
+  box-shadow: 0px 0.25vw rgb(13, 0, 70);
   border: 0px;
   position: relative;
   top: 16vw;
   left: 0vw;
   right: 0vw;
   margin: auto;
-  color: white;
-  font-family: 'Bebas Neue', sans-serif;
+  color: rgb(255, 255, 255);
+  font-family: "Bebas Neue", sans-serif;
   font-size: 3vw;
   text-shadow: 0px 0.2vw 2px rgba(30, 0, 163, 0.75);
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 .main__minigame--lobby button i {
   padding-right: 1vw;
 }
-
 .main__minigame--lobby button:hover {
-  -webkit-transform: scale(105%);
-          transform: scale(105%);
+  transform: scale(105%);
   cursor: pointer;
 }
-
 .main__minigame--lobby.started {
   display: none;
 }
@@ -650,78 +510,65 @@ body {
 .main__minigame--next-stage {
   width: 100vw;
   height: 30vw;
-  color: white;
+  color: rgb(255, 255, 255);
   text-shadow: 0px 2px rgba(42, 0, 119, 0.5);
   text-align: center;
   position: relative;
   top: 12vw;
 }
-
 .main__minigame--next-stage h4 {
   height: 5.5vw;
   margin: 0;
   position: relative;
   top: 8vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px -4px white;
+  text-shadow: 0px -4px rgb(255, 255, 255);
   font-size: 7vw;
 }
-
 .main__minigame--next-stage h4:hover {
-  text-shadow: 0px -2px white;
+  text-shadow: 0px -2px rgb(255, 255, 255);
 }
-
 .main__minigame--next-stage p {
   margin: 0;
   position: relative;
   top: 9.5vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px -2px white;
+  text-shadow: 0px -2px rgb(255, 255, 255);
   font-size: 2vw;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 }
-
 .main__minigame--next-stage button {
   width: 25vw;
   height: 4vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#272aff), to(#ef3cff));
-  background: linear-gradient(#272aff, #ef3cff);
+  background: linear-gradient(rgb(39, 42, 255), rgb(239, 60, 255));
   border-radius: 10vw;
-  -webkit-box-shadow: 0px 0.25vw #0d0046;
-          box-shadow: 0px 0.25vw #0d0046;
+  box-shadow: 0px 0.25vw rgb(13, 0, 70);
   border: 0px;
   position: relative;
   top: 16vw;
   left: 0vw;
   right: 0vw;
   margin: auto;
-  color: white;
-  font-family: 'Bebas Neue', sans-serif;
+  color: rgb(255, 255, 255);
+  font-family: "Bebas Neue", sans-serif;
   font-size: 3vw;
   text-shadow: 0px 0.2vw 2px rgba(30, 0, 163, 0.75);
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  top: 12vw;
 }
-
 .main__minigame--next-stage button i {
   padding-right: 1vw;
 }
-
 .main__minigame--next-stage button:hover {
-  -webkit-transform: scale(105%);
-          transform: scale(105%);
+  transform: scale(105%);
   cursor: pointer;
 }
-
+.main__minigame--next-stage button {
+  top: 12vw;
+}
 .main__minigame--next-stage.not-completed {
   display: none;
 }
@@ -729,76 +576,61 @@ body {
 .main__minigame--end {
   width: 100vw;
   height: 30vw;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
   position: relative;
   top: 12vw;
 }
-
 .main__minigame--end h4 {
   height: 5.5vw;
   margin: 0;
   position: relative;
   top: 8vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px -4px white;
+  text-shadow: 0px -4px rgb(255, 255, 255);
   font-size: 5.5vw;
 }
-
 .main__minigame--end h4:hover {
-  text-shadow: 0px -2px white;
+  text-shadow: 0px -2px rgb(255, 255, 255);
 }
-
 .main__minigame--end p {
   margin: 0;
   position: relative;
   top: 8.5vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px -2px white;
+  text-shadow: 0px -2px rgb(255, 255, 255);
   font-size: 2vw;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 }
-
 .main__minigame--end button {
   width: 25vw;
   height: 4vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#272aff), to(#ef3cff));
-  background: linear-gradient(#272aff, #ef3cff);
+  background: linear-gradient(rgb(39, 42, 255), rgb(239, 60, 255));
   border-radius: 10vw;
-  -webkit-box-shadow: 0px 0.25vw #0d0046;
-          box-shadow: 0px 0.25vw #0d0046;
+  box-shadow: 0px 0.25vw rgb(13, 0, 70);
   border: 0px;
   position: relative;
   top: 16vw;
   left: 0vw;
   right: 0vw;
   margin: auto;
-  color: white;
-  font-family: 'Bebas Neue', sans-serif;
+  color: rgb(255, 255, 255);
+  font-family: "Bebas Neue", sans-serif;
   font-size: 3vw;
   text-shadow: 0px 0.2vw 2px rgba(30, 0, 163, 0.75);
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 .main__minigame--end button i {
   padding-right: 1vw;
 }
-
 .main__minigame--end button:hover {
-  -webkit-transform: scale(105%);
-          transform: scale(105%);
+  transform: scale(105%);
   cursor: pointer;
 }
-
 .main__minigame--end.not-ended {
   display: none;
 }
@@ -806,61 +638,44 @@ body {
 .main__minigame--result {
   width: 70vw;
   height: 4vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
   position: relative;
   top: 12vw;
   left: 0vw;
   right: 0vw;
   margin: auto;
-  background: white;
+  background: rgb(255, 255, 255);
   border-radius: 5vw;
 }
-
 .main__minigame--result .minigame-result {
-  -ms-flex-preferred-size: 20vw;
-      flex-basis: 20vw;
+  flex-basis: 20vw;
   height: 3vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2500aa), to(rgba(98, 0, 122, 0.9)));
-  background: linear-gradient(#2500aa, rgba(98, 0, 122, 0.9));
+  background: linear-gradient(rgb(37, 0, 170), rgba(98, 0, 122, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   vertical-align: middle;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-
 .main__minigame--result .minigame-result i {
-  background: -webkit-gradient(linear, left top, left bottom, from(#3000df), to(rgba(154, 0, 192, 0.9)));
-  background: linear-gradient(#3000df, rgba(154, 0, 192, 0.9));
+  background: linear-gradient(rgb(48, 0, 223), rgba(154, 0, 192, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0vw auto 0.75vw auto;
   font-size: 2.25vw;
 }
-
 .main__minigame--result .minigame-result span {
   margin: 0vw 1vw 0.75vw 1vw;
   font-size: 1.75vw;
 }
-
 .main__minigame--result .minigame-result strong {
   font-size: 2.75vw;
 }
-
 .main__minigame--result .minigame-result:hover {
-  -ms-flex-preferred-size: 19vw;
-      flex-basis: 19vw;
+  flex-basis: 19vw;
   margin: 0vw 2vw;
 }
-
 .main__minigame--result.started {
   display: none;
 }
@@ -869,105 +684,72 @@ body {
   width: 80vw;
   height: 48vw;
   padding: 0.5vw 0.75vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
   position: relative;
   top: 10vw;
   left: 0vw;
   right: 0vw;
   margin: auto;
-  -webkit-perspective: 80vw;
-          perspective: 80vw;
+  perspective: 80vw;
   background: rgba(174, 130, 255, 0.5);
   border-radius: 20px;
-  border: 5px solid white;
-  -webkit-box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
-          box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: 0px 5px 2px rgba(30, 0, 163, 0.25);
 }
-
 .main__minigame--main.not-started {
   display: none;
 }
 
 .main__minigame--card {
-  -ms-flex-preferred-size: 8vw;
-      flex-basis: 8vw;
+  flex-basis: 8vw;
   height: 11vw;
   margin: 0.25vw;
   background-image: url(../img/card-back.png);
   background-size: contain;
   border-radius: 10px;
   border: 1px solid rgba(30, 0, 163, 0.25);
-  -webkit-box-shadow: 0px 3px rgba(30, 0, 163, 0.75);
-          box-shadow: 0px 3px rgba(30, 0, 163, 0.75);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: scale(100%);
-          transform: scale(100%);
-  -webkit-transition: -webkit-transform .5s;
-  transition: -webkit-transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s;
+  box-shadow: 0px 3px rgba(30, 0, 163, 0.75);
+  transform-style: preserve-3d;
+  transform: scale(100%);
+  transition: transform 0.5s;
 }
-
 .main__minigame--card:hover {
-  -webkit-transform: scale(97%);
-          transform: scale(97%);
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
+  transform: scale(97%);
   transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
 }
-
 .main__minigame--card.flip-card {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  -webkit-transition: -webkit-transform .5s;
-  transition: -webkit-transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s;
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
 }
-
-.main__minigame--card.flip-card[data-card='0'] {
-  background: white url("../img/icon_img/icon_1.png");
+.main__minigame--card.flip-card[data-card="0"] {
+  background: rgb(255, 255, 255) url("../img/icon_img/icon_1.png");
   background-size: cover;
 }
-
-.main__minigame--card.flip-card[data-card='1'] {
-  background: white url("../img/icon_img/icon_2.png");
+.main__minigame--card.flip-card[data-card="1"] {
+  background: rgb(255, 255, 255) url("../img/icon_img/icon_2.png");
   background-size: cover;
 }
-
-.main__minigame--card.flip-card[data-card='2'] {
-  background: white url("../img/icon_img/icon_3.png");
+.main__minigame--card.flip-card[data-card="2"] {
+  background: rgb(255, 255, 255) url("../img/icon_img/icon_3.png");
   background-size: cover;
 }
-
-.main__minigame--card.flip-card[data-card='3'] {
-  background: white url("../img/icon_img/icon_4.png");
+.main__minigame--card.flip-card[data-card="3"] {
+  background: rgb(255, 255, 255) url("../img/icon_img/icon_4.png");
   background-size: cover;
 }
-
-.main__minigame--card.flip-card[data-card='4'] {
-  background: white url("../img/icon_img/icon_5.png");
+.main__minigame--card.flip-card[data-card="4"] {
+  background: rgb(255, 255, 255) url("../img/icon_img/icon_5.png");
   background-size: cover;
 }
-
-.main__minigame--card.flip-card[data-card='5'] {
-  background: white url("../img/icon_img/icon_6.png");
+.main__minigame--card.flip-card[data-card="5"] {
+  background: rgb(255, 255, 255) url("../img/icon_img/icon_6.png");
   background-size: cover;
 }
-
 .main__minigame--card.hidden-card {
   visibility: hidden;
 }
+
 /*# sourceMappingURL=game.css.map */

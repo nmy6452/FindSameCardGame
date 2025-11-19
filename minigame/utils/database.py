@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, Optional, Type
 from flask import current_app
 
 import os
@@ -36,6 +36,16 @@ def account_exist(player_id: str) -> bool:
     try:
         user = session.query(Players).filter(Players.id == player_id).first()
         return user is not None
+    finally:
+        session.close()
+
+
+def get_account_by_email(email: str) -> Optional[Type[Players]]:
+    # MySQL 의 Data 를 Dict 형태로 반환 시키는 DictCursor 사용
+    engine, session = connect()
+    try:
+        user = session.query(Players).filter(Players.email == email).first()
+        return user
     finally:
         session.close()
 
@@ -141,7 +151,21 @@ def account_change_password(player_id: str, player_pw: str) -> None:
     finally:
         session.close()
 
-
+def account_update_password(email: str, new_password: str) -> None:
+    """
+    이메일로 계정을 찾아 비밀번호를 변경합니다.
+    :param email: 변경 대상 계정의 이메일 주소
+    :param new_password: 이미 해시된 새로운 비밀번호 문자열
+    :return: None
+    """
+    engine, session = connect()
+    try:
+        session.query(Players).filter(Players.email == email).update({
+            Players.password: new_password
+        })
+        session.commit()
+    finally:
+        session.close()
 # 여기서부터는 스코어와 관련된 함수들을 작성하는 파트 (score, rank, leaderboard)
 # 현재 해당 유저의 최고 점수와 최고 스테이지를 불러오는 함수
 def get_user_score(player_id: str) -> dict:
