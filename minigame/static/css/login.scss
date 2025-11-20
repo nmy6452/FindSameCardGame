@@ -454,6 +454,63 @@
     }
 }
 
+.main__find-password--confirm {
+    width: 50vw;
+    height: 27.5vw;
+
+    position: relative;
+    top: 10vw;
+    margin: auto;
+
+    background: $color-white; 
+    border-radius: 2.5vw;
+    box-shadow: 0vw 0.25vw 0.3vw rgba(30, 0, 163, 0.5);
+
+    color:rgb(104, 0, 189);
+    text-align: center;
+
+    &.not-submitted {
+        display: none;
+    }
+
+    h4 {
+        position: relative;
+        top: 4.5vw;
+
+        margin: 0;
+        font-size: 4vw;
+    }
+
+    p {
+        position: relative;
+        top: 5vw;
+
+        margin: 0;
+        
+        color:rgb(104, 0, 189);
+        font-size: 1vw;
+        font-family: 'Nanumsquare', sans-serif;
+
+        &.check-confirm {
+            position: relative;
+            top: 1vw;
+            
+            color: rgb(52, 0, 134);
+            font-family: 'NanumSquare', sans-serif;
+            font-size: 1.25vw;
+        }
+    }
+
+    strong {
+        font-weight: 800;
+    }
+
+    i {
+        position: relative;
+        top: 3.5vw;
+        font-size: 10vw;
+    }
+}
 
 .main__reset-password {
     width: 100vw;
