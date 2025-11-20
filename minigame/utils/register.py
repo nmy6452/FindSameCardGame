@@ -116,7 +116,7 @@ def register_find_password():
         user = get_account_by_email(email)
         if user is None or user.isConfirmed == False:
             # 만약 등록되지 않았거나 인증되지 않은 계정의 경우 애러 코드 반환
-            return jsonify(result='fail', errcode='002', status=200)
+            return jsonify(result='fail', errcode='003', status=200)
         else:
             # email을 포함하여 새로운 랜덤 난수 토큰을 생성하고, 이를 url에 할당시킴.
             token = generate_confirmation_token(email)
